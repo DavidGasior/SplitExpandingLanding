@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+
+$textColor: #fff;
+$overlayColor: rgba(0, 0, 0, 0.4);
+$transitionDuration: 0.4s;
+
+@mixin splitBlueprint {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+@mixin overlayBlueprint {
+  background-color: $overlayColor;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Marcellus", serif;
+  height: 100vh;
+  overflow: hidden;
+  .main-div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .split {
+      color: $textColor;
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      transition: height $transitionDuration ease-in-out;
+      .overlay {
+        transition: all $transitionDuration ease-in-out;
+        &.top {
+          @include overlayBlueprint();
+          top: 0;
+        }
+        &.bottom {
+          @include overlayBlueprint();
+          bottom: 0;
+        }
+      }
+      .inside-wrap-span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        gap: 1rem;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+      }
+      &.top {
+        background: url(dog.jpg);
+        @include splitBlueprint();
+        top: 0;
+      }
+      &.bottom {
+        background: url(cat.jpg);
+        @include splitBlueprint();
+        bottom: 0;
+        .inside-wrap-span {
+          left: 90%;
+          transform: translateX(-100%);
+        }
+      }
+    }
+    &.hover {
+      .top.hover {
+        height: 70%;
+        & .overlay {
+          background-color: rgba(0, 0, 0, 0);
+        }
+      }
+      .bottom.hover {
+        height: 70%;
+        & .overlay {
+          background-color: rgba(0, 0, 0, 0);
+        }
+      }
+      .top {
+        height: 30%;
+      }
+      .bottom {
+        height: 30%;
+      }
+    }
+  }
+
+  a {
+    &:link {
+      cursor: pointer;
+      width: 150px;
+      height: 50px;
+      text-decoration: none;
+      color: $textColor;
+      border: 2px solid $textColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      transition: all $transitionDuration;
+    }
+    &:visited {
+      color: $textColor;
+    }
+    &:hover {
+      transform: scale(1.02);
+    }
+    &:active {
+      transform: scale(1);
+    }
+  }
+}

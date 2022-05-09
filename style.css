@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Marcellus", serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body .main-div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body .main-div .split {
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  -webkit-transition: height 0.4s ease-in-out;
+  transition: height 0.4s ease-in-out;
+}
+
+body .main-div .split .overlay {
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+body .main-div .split .overlay.top {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+body .main-div .split .overlay.bottom {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+}
+
+body .main-div .split .inside-wrap-span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  gap: 1rem;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+body .main-div .split.top {
+  background: url(dog.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  top: 0;
+}
+
+body .main-div .split.bottom {
+  background: url(cat.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  bottom: 0;
+}
+
+body .main-div .split.bottom .inside-wrap-span {
+  left: 90%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+body .main-div.hover .top.hover {
+  height: 70%;
+}
+
+body .main-div.hover .top.hover .overlay {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+body .main-div.hover .bottom.hover {
+  height: 70%;
+}
+
+body .main-div.hover .bottom.hover .overlay {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+body .main-div.hover .top {
+  height: 30%;
+}
+
+body .main-div.hover .bottom {
+  height: 30%;
+}
+
+body a:link {
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+body a:visited {
+  color: #fff;
+}
+
+body a:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+body a:active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+/*# sourceMappingURL=style.css.map */
